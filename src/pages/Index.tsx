@@ -129,9 +129,9 @@ const Index = () => {
     const quantity = parseInt(calculatorValues.quantity) || 1;
 
     const area = (width * height) / 100;
-    const basePrice = area * 50;
-    const colorMultiplier = 1 + (colors - 1) * 0.2;
-    const quantityDiscount = quantity > 10 ? 0.85 : quantity > 5 ? 0.9 : 1;
+    const basePrice = area * 15;
+    const colorMultiplier = 1 + (colors - 1) * 0.15;
+    const quantityDiscount = quantity > 10 ? 0.75 : quantity > 5 ? 0.85 : 1;
 
     return Math.round(basePrice * colorMultiplier * quantityDiscount * quantity);
   };
