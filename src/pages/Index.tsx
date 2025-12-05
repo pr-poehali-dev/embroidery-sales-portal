@@ -125,15 +125,13 @@ const Index = () => {
   const calculatePrice = () => {
     const width = parseFloat(calculatorValues.width) || 0;
     const height = parseFloat(calculatorValues.height) || 0;
-    const colors = parseInt(calculatorValues.colors) || 1;
     const quantity = parseInt(calculatorValues.quantity) || 1;
 
     const area = (width * height) / 100;
     const basePrice = area * 15;
-    const colorMultiplier = 1 + (colors - 1) * 0.15;
     const quantityDiscount = quantity > 10 ? 0.75 : quantity > 5 ? 0.85 : 1;
 
-    return Math.round(basePrice * colorMultiplier * quantityDiscount * quantity);
+    return Math.round(basePrice * quantityDiscount * quantity);
   };
 
   const scrollToSection = (section: string) => {
